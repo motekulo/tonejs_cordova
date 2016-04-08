@@ -4,30 +4,40 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="user-scalable=no,
-        initial-scale=1, maximum-scale=1, minimum-scale=1,
-        width=device-width, height=device-height,
-        target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="icon" type="image/png" sizes="174x174" href="img/favicon.png">
+
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/Tone.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/draggabilly.js"></script>
+        <script type="text/javascript" src="js/require.js"></script>
+        <script type="text/javascript" src="js/p5.js"></script>
+        <script type="text/javascript" src="js/Logo.js"></script>
         <script type="text/javascript" src="js/Interface.js"></script>
         <script type="text/javascript" src="js/qwerty-hancock.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/monoSynth.js"></script>
+        <script type="text/javascript" src="js/oscillator.js"></script>
 
         <title>Tone.js examples</title>
 
     </head>
 
     <body>
-	<div id="example_title"></div>
-        
-        <button type="button" id="mono_synth">MonoSynth</button>
+        <div id="Content">
+            <div id="example_title"></div>
 
-        <div id="content"></div>
+            <button type="button" id="mono_synth">MonoSynth</button>
+            <button type="button" id="oscillator">Oscillator</button>
 
+            <div id="keyboard"></div>
+            <div id="DragContainer"></div>
+            <div id="GUI"></div>
+        </div>
     </body>
 </html>
 

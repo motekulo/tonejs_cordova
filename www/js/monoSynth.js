@@ -1,7 +1,7 @@
 var monoSynth = function (event) {
 
     var keyboard = new QwertyHancock({
-        id: "content",
+        id: "keyboard",
         width: document.body.clientWidth,
         //        width: 600,
         height: 150,

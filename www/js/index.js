@@ -21,8 +21,9 @@ document.addEventListener("deviceready", function(event) {
 
     var button = document.getElementById("mono_synth");
     button.addEventListener('click', showMonoSynth);
-    //var mkeyboard = document.getElementById("keyboard");
 
+    var button = document.getElementById("oscillator");
+    button.addEventListener('click', showOscillator);
 
 });
 
@@ -32,8 +33,16 @@ var showMonoSynth = function (event) {
     monoSynth();
 };
 
+var showOscillator = function (event) {
+    // Clear old content
+//    clearContent();
+    mOscillator();
+
+};
+
+
 var clearContent = function() {
-    var div = document.getElementById('content');
+    var div = document.getElementById('keyboard');
     while(div.firstChild){
         div.removeChild(div.firstChild);
     }
