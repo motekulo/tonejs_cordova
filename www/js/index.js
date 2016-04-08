@@ -31,8 +31,8 @@ var showMonoSynth = function (event) {
 
     var keyboard = new QwertyHancock({
         id: "keyboard",
-//        width: document.getElementById("#Content").width(),
-        width: 600,
+        width: document.body.clientWidth,
+        //        width: 600,
         height: 150,
         octaves: Interface.isMobile ? 1.26 : 3,
         octaves: 2,
