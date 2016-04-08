@@ -26,38 +26,16 @@ document.addEventListener("deviceready", function(event) {
 
 });
 
-
 var showMonoSynth = function (event) {
-
-    var keyboard = new QwertyHancock({
-        id: "keyboard",
-        width: document.body.clientWidth,
-        //        width: 600,
-        height: 150,
-        octaves: Interface.isMobile ? 1.26 : 3,
-        octaves: 2,
-        startNote: "C3",
-        whiteKeyColour: "white",
-        blackKeyColour: "#1EDF3E",
-        activeColour : "#3833ED"
-
-    });
-    keyboard.keyDown = function (note, frequency) {
-        synth.triggerAttack(frequency);
-    };
-    keyboard.keyUp = function () {
-        synth.triggerRelease();
-    };
-
-    var synth = new Tone.MonoSynth({
-        "oscillator" : {
-            "type" : "square"
-        },
-        "envelope" : {
-            "attack" : 0.1
-        }
-    }).toMaster();
-
+    // Clear old content
+    clearContent();
+    monoSynth();
 };
 
+var clearContent = function() {
+    var div = document.getElementById('content');
+    while(div.firstChild){
+        div.removeChild(div.firstChild);
+    }
+};
 
