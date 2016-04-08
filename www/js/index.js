@@ -19,19 +19,28 @@
 
 document.addEventListener("deviceready", function(event) {
 
-    var button = document.getElementById("start_tone");
-    button.addEventListener('click', handleClick);
+    var button = document.getElementById("mono_synth");
+    button.addEventListener('click', showMonoSynth);
     //var mkeyboard = document.getElementById("keyboard");
+
+
+});
+
+
+var showMonoSynth = function (event) {
 
     var keyboard = new QwertyHancock({
         id: "keyboard",
+//        width: document.getElementById("#Content").width(),
         width: 600,
         height: 150,
+        octaves: Interface.isMobile ? 1.26 : 3,
         octaves: 2,
         startNote: "C3",
         whiteKeyColour: "white",
         blackKeyColour: "#1EDF3E",
         activeColour : "#3833ED"
+
     });
     keyboard.keyDown = function (note, frequency) {
         synth.triggerAttack(frequency);
@@ -49,23 +58,6 @@ document.addEventListener("deviceready", function(event) {
         }
     }).toMaster();
 
-
-});
-
-
-var handleClick = function (event) {
-    var element = document.getElementById("phonegap");
-    element.innerHTML = "Button pressed";
-    // do something!
-    var synth = new Tone.MonoSynth({
-        "oscillator" : {
-            "type" : "square"
-        },
-        "envelope" : {
-            "attack" : 0.1
-        }
-    }).toMaster();
-    synth.triggerAttackRelease("C4", "8n");
 };
 
 
