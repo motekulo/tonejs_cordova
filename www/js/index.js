@@ -25,6 +25,25 @@ document.addEventListener("deviceready", function(event) {
     var button = document.getElementById("oscillator");
     button.addEventListener('click', showOscillator);
 
+    var button = document.getElementById("testthings");
+    button.addEventListener('click', testThings);
+
+    var a = new Interface.Panel({ 
+        container:document.querySelector("#test") 
+    });
+    var b = new Interface.Slider({
+        label: 'vertical slider',  
+        bounds:[.05,.05,.3,.9] 
+    });
+    var c = new Interface.Slider({ 
+        bounds:[.4,.35,.55,.3], 
+        label: 'horizontal slider',  
+        isVertical:false, 
+        value:.5,
+    });
+
+    a.background = 'black';
+    a.add(b,c);
 });
 
 var showMonoSynth = function (event) {
@@ -48,3 +67,6 @@ var clearContent = function() {
     }
 };
 
+
+var testThings = function() {
+    }
